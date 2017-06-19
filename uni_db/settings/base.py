@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'uni_db.client_erp',
     'uni_db.order_management',
+    'uni_db.inventory',
 )
 
 MIDDLEWARE_CLASSES = (
