@@ -36,7 +36,7 @@ class Delivery(models.Model):
 # 	order_dict = JSONField(blank=True,null=True)
 	
 class OrderItemDetails(models.Model):
-	barcode = models.OneToOneField(Barcode)
+	barcode = models.ForeignKey(Barcode)
 	delivery = models.ForeignKey(Delivery)
 	weight=models.IntegerField(default=0)
 	
