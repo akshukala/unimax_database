@@ -76,3 +76,11 @@ class OrderItem(models.Model):
     prepaid_amount = models.FloatField(default=0)
     total_price = models.FloatField(blank=False, null=False)
     # on_hold = models.BooleanField(default=True)
+
+class Transaction(models.Model):
+    order=models.OneToOneField(Order)
+    payment_mode = models.CharField(max_length=20,blank=True, null=True)
+    transaction_note=models.TextField(blank=True, null=True)
+    payment_date = models.DateField(blank=True, null=True)
+    bank = models.CharField(max_length=255, blank=True)
+    created_on = models.DateTimeField(auto_now=True)
