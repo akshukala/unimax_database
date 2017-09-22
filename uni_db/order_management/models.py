@@ -33,6 +33,8 @@ class Order(models.Model):
     grand_total = models.FloatField(default=0)
     cod_amount = models.FloatField(default=0)
     advance_order_date = models.DateField(blank=True ,null = True)
+    invoice_no = models.CharField(max_length=25, blank=True, null=True)
+    
     def status_history(self):
         return OrderStatusHistory.objects.filter(order=self).order_by('-id')
     

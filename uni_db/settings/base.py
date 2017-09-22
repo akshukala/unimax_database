@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'uni_db.client_erp',
     'uni_db.order_management',
     'uni_db.inventory',
+    'uni_db.mob_app',
 )
 
 MIDDLEWARE_CLASSES = (
