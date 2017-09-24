@@ -30,7 +30,7 @@ class CustOrder(models.Model):
 	created_by = models.CharField(max_length=512)
 	modified_by = models.CharField(max_length=512)
 	grand_total = models.FloatField(default=0)
-    
+	is_active = models.BooleanField(default=True)
 
 class Order_Item(models.Model):
 	order = models.ForeignKey(CustOrder)
