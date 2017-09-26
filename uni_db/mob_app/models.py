@@ -16,9 +16,6 @@ class Customer(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     created_by = models.ForeignKey(User, null=True, related_name="customer_entered_by")
     modified_by = models.ForeignKey(User, null=True, related_name="customer_modified_by")
-    img_url1 = models.CharField(max_length=1024, blank=True, null=True)
-    img_url2 = models.CharField(max_length=1024, blank=True, null=True)
-    img_url3 = models.CharField(max_length=1024, blank=True, null=True)
 
 class CustOrder(models.Model):
 	PAYMENT_TYPE = ((1, "Credit"),
@@ -52,3 +49,7 @@ class User_Details(models.Model):
 	user = models.ForeignKey(User)
 	created_on = models.DateTimeField(auto_now_add=True)
 	updated_on = models.DateTimeField(auto_now=True)
+
+class Shop_Images(models.Model):
+	img_url = models.CharField(max_length=1024, blank=True, null=True)
+	customer = models.ForeignKey(Customer)
