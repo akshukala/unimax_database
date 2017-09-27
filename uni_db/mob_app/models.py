@@ -53,3 +53,6 @@ class User_Details(models.Model):
 class Shop_Images(models.Model):
 	img_url = models.CharField(max_length=1024, blank=True, null=True)
 	customer = models.ForeignKey(Customer)
+
+class FirebaseToken(models.Model):
+	token_id = models.CharField(max_length=255,null=True,blank=True)
